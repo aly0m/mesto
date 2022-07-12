@@ -1,0 +1,16 @@
+.popup__input-name {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  border: none;
+  padding: 0;
+}
+
+.popup__input-name:focus {
+  outline: none;
+}
+
+.popup__input-name::placeholder {
+  color: #000000;
+}

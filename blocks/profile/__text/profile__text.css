@@ -1,0 +1,5 @@
+.profile__text {
+  display: flex;
+  position: relative;
+  align-items: baseline;
+}

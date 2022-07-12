@@ -1,0 +1,8 @@
+.popup__input-line {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background-color: #545454;
+  opacity: 70%;
+  margin-top: 13px;
+}
