@@ -18,6 +18,6 @@
 
 @media (max-width: 767px) {
   .page__content {
-    max-width: 100%
+    max-width: 100%;
   }
 }
