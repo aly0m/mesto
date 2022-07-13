@@ -1,7 +1,7 @@
 .page__content {
   margin: auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: calc(1280px - 400px);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
