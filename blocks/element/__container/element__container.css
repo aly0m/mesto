@@ -1,8 +1,6 @@
 .element__container {
-  display: inline-flex;
-  background-color: #FFFFFF;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding: 25px 20px 31px 17px;
 }

@@ -3,11 +3,11 @@
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  margin-right: 30px;
   min-width: 22px;
   min-height: 19px;
   cursor: pointer;
   border: none;
+  outline: none;
   padding: 0;
   transition: filter 1s;
 }
