@@ -1,4 +1,4 @@
-.element__like-button {
+.element__like-btn {
   background-image: url(../../../images/likeButton.svg);
   background-color: transparent;
   background-size: cover;
@@ -12,10 +12,7 @@
   transition: filter 1s;
 }
 
-.element__like-button:hover {
+.element__like-btn:hover {
   filter: opacity(50%);
 }
 
-.element__like-button:active {
-  background-image: url(../../../images/likeButtonActive.svg);
-}
