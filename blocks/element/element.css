@@ -1,4 +1,6 @@
 .element {
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 363px;
   max-width: 100%;
