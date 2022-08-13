@@ -1,4 +1,5 @@
 import {initialCards} from "./data.js"
+const popupList = Array.from(document.querySelectorAll('.popup'));
 // buttons
 const buttonEdit = document.querySelector('.profile__btn_type_edit');
 const buttonOpenPopupCard = document.querySelector('.profile__btn_type_add');
@@ -45,6 +46,14 @@ function openEdit(popupType) {
 // close popup
 function closeEdit(popup) {
   popup.classList.remove("popup_opened");
+}
+// close popup esc 
+function closeEditEsc(evt) {
+  if (evt.key === 'Escape') {
+    popupList.forEach((popup) => {
+      closeEdit(popup);
+    });
+  }
 }
 // handle all existing "close" buttons
 function closeButtonHandler() {
@@ -112,5 +121,11 @@ formElement.addEventListener('submit', submitNewElement);
 buttonOpenPopupCard.addEventListener('click', function () {
   openEdit(popupElement)
 });
+document.addEventListener('keydown', closeEditEsc);
+document.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup')) {
+    evt.target.classList.remove('popup_opened');
+  }
+}); 
 
 

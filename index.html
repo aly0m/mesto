@@ -34,10 +34,12 @@
       </footer>
       <div class="popup popup_open-profile">
         <div class="popup__content">
-          <form class="popup__input">
+          <form class="popup__input" novalidate>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" placeholder="Жак-Ив Кусто" class="popup__field popup__field_type_name">
-            <input type="text" placeholder="Исследователь океана" class="popup__field popup__field_type_job">
+            <input type="text" placeholder="Жак-Ив Кусто" id="name" class="popup__field popup__field_type_name" required minlength="2" maxlength="40">
+            <span class="popup__field-error name-error popup__field-error_type_name"></span>
+            <input type="text" placeholder="Исследователь океана" id="job" class="popup__field popup__field_type_job" required minlength="2" maxlength="200">
+            <span class="popup__field-error job-error"></span>
             <button type="submit" class="popup__submit-btn">Сохранить</button>
           </form>
           <button class="popup__close-btn"></button>
@@ -45,10 +47,12 @@
       </div>
       <div class="popup popup_open-element">
         <div class="popup__content">
-          <form class="popup__input popup__input_element">
+          <form id="place" class="popup__input popup__input_element" novalidate>
             <h2 class="popup__title">Новое место</h2>
-            <input type="text" placeholder="Название" class="popup__field popup__field_type_place">
-            <input type="text" placeholder="Ссылка на картинку" class="popup__field popup__field_type_link">
+            <input type="text" placeholder="Название" id="place-name" class="popup__field popup__field_type_place" required minlength="2" maxlength="25">
+            <span class="popup__field-error popup__field-error_type_name-place place-name-error"></span>
+            <input type="url" placeholder="Ссылка на картинку" id="link" class="popup__field popup__field_type_link" required>
+            <span class="popup__field-error link-error"></span>
             <button type="submit" class="popup__submit-btn">Сохранить</button>
           </form>
           <button class="popup__close-btn"></button>
@@ -73,6 +77,7 @@
       </template>
       <script type="module" src="./scripts/script.js"></script>
       <script type="module" src="./scripts/data.js"></script>
+      <script type="module" src="./scripts/validation.js"></script>
     </div>
   </body>
 </html>
