@@ -6,7 +6,6 @@ const config = {
 };
 
 const showInputError = (formElement, inputElement, errorMessage) => {
-  console.log(inputElement);
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.classList.add('form__field-error');
   errorElement.textContent = errorMessage;
