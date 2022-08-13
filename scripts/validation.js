@@ -48,8 +48,10 @@ function toggleButtonState(inputList, obj2) {
   buttonList.forEach((buttonElement) => {
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.add('popup__submit-btn_inactive');
+      buttonElement.disabled = "disabled";
     } else {
       buttonElement.classList.remove('popup__submit-btn_inactive');
+      buttonElement.disabled = false;
     }
   });
 }
