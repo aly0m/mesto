@@ -5,7 +5,3 @@
 .popup__field_type_name:valid {
   color: black;
  }
- 
- .popup__field_type_name:invalid {
-   border-bottom: 1px solid red;
- }
