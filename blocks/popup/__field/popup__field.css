@@ -4,7 +4,7 @@ font-size: 14px;
 line-height: 17px;
 font-weight: 400;
 border: none;
-padding-bottom: 13px;
+padding: 0 0 13px;
 border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
@@ -19,12 +19,3 @@ border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 .popup__field:empty::placeholder {
   color: #c4c4c4;
 }
-
-.popup__field:valid {
- color: black;
-}
-
-.popup__field:invalid {
-  border-bottom: 1px solid red;
-}
-

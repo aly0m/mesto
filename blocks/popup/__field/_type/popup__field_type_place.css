@@ -1,3 +1,9 @@
 .popup__field_type_place {
   margin-bottom: 30px;
 }
+
+.popup__field_type_place:valid {
+  color: black;
+ }
+ 
+ 
