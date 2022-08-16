@@ -8,7 +8,7 @@ const buttonClose = document.querySelectorAll('.popup__close-btn');
 const buttonSubmit = document.querySelector('.popup__submit-btn-place');
 // profile
 const popupProfile = document.querySelector('.popup_open-profile');
-const formPopupProfile = document.querySelector('.popup__form_profile');
+const formEditProfile = document.querySelector('.popup__form_profile');
 const inputName = document.querySelector('.popup__field_type_name');
 const inputJob = document.querySelector('.popup__field_type_job');
 const profileName = document.querySelector('.profile__name');
@@ -53,11 +53,10 @@ function closePopup(popup) {
 }
 // close popup esc 
 function closePopupByEscKey(evt) {
-  popupsList.forEach((popup) => {
-    if (evt.key === escKey && popup.classList.contains('popup_opened')) {
-      closePopup(popup);
-    }
-  });
+  if (evt.key === escKey) {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
 }
 // add elements from array
 function addElements() {
@@ -84,8 +83,7 @@ function createElement(elementName, elementLink) {
   });
   // delete button function
   deleteButton.addEventListener('click', function (evt) {
-    const elementItem = evt.target.closest('.element');
-    elementItem.remove();
+    newElement.remove();
   });
   // open image from element (image popup)
   elementImage.addEventListener('click', function (evt) {
@@ -109,17 +107,16 @@ function submitNewElement(evt) {
 }
 // events
 buttonEdit.addEventListener('click', openProfilePopup);
-formPopupProfile.addEventListener('submit', saveInputValues);
+formEditProfile.addEventListener('submit', saveInputValues);
 formNewElement.addEventListener('submit', submitNewElement);
 buttonOpenPopupCard.addEventListener('click', function () {
   openPopup(popupElement)
 });
 popupsList.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('popup')) {
-      evt.target.classList.remove('popup_opened');
-    } else if (evt.target.classList.contains('popup__close-btn')) {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-btn')) {
       closePopup(popup);
     }
   });
 });
+
