@@ -82,7 +82,7 @@ function createElement(elementName, elementLink) {
     evt.target.classList.toggle('element__like-btn_active');
   });
   // delete button function
-  deleteButton.addEventListener('click', function (evt) {
+  deleteButton.addEventListener('click', function () {
     newElement.remove();
   });
   // open image from element (image popup)
