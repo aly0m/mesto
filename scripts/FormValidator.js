@@ -12,6 +12,7 @@ export default class FormValidator {
       evt.preventDefault();
       this._disableButton(this._submitButton, this._config);
     });
+    this._setButtonState(this._submitButton, this._form.checkValidity(), this._config);
   }
 // add event listeners to submit event
   _setEventListeners = (form, config, button) => {
