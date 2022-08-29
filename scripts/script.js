@@ -97,16 +97,17 @@ initialCards.forEach((item) => {
 // open card image fullscreen mode
 export function openImagePopup(name, link) {
   imagePopup.src = link;
+  imagePopup.alt = 'Изображение места - ' + name;
   captionPopup.textContent = name;
   openPopup(placePopup);
 }
+
 // submit data of editing profile form
 formEditProfile.addEventListener('submit', (evt) => {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileJob.textContent = inputJob.value;
   closePopup(popupProfile);
-  formEditProfile.reset();
 });
 // submit creation of a new card
 formNewElement.addEventListener('submit', (evt) => {
@@ -117,6 +118,7 @@ formNewElement.addEventListener('submit', (evt) => {
   //
   addCreatedElement(elementsList, createElement(newCard));
   closePopup(popupElement);
+  evt.target.reset();
 });
 //edit button listener
 buttonEdit.addEventListener('click', () => {
@@ -128,6 +130,7 @@ buttonEdit.addEventListener('click', () => {
 buttonOpenPopupCard.addEventListener('click', () => {
   openPopup(popupElement);
 });
+
 // validation of profile edit form
 const profileFormValidation = new FormValidator(config, formEditProfile);
 profileFormValidation.enableValidation();
@@ -135,6 +138,24 @@ profileFormValidation.enableValidation();
 const addCardFormValidation = new FormValidator(config, formNewElement);
 addCardFormValidation.enableValidation();
 
+/*
+const formValidators = {};
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((form) => {
+    const validator = new FormValidator(config, form);
+    const formName = form.getAttribute('name');
+    //
+    formValidators[formName] = validator;
+  validator.enableValidation();
+  });
+};
+//
+enableValidation(config);
+//
+formValidators['profile-form'].resetValidation();
+formValidators['card-form'].resetValidation();
+*/
 
 
 

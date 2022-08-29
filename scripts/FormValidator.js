@@ -12,19 +12,28 @@ export default class FormValidator {
       evt.preventDefault();
       this._disableButton(this._submitButton, this._config);
     });
-    this._setButtonState(this._submitButton, this._form.checkValidity(), this._config);
+    this._toggleButtonState(this._submitButton, this._form.checkValidity(), this._config);
   }
 // add event listeners to submit event
   _setEventListeners = (form, config, button) => {
     this._inputsList.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(form, input, config);
-        this._setButtonState(button, form.checkValidity(), config);
+        this._toggleButtonState(button, form.checkValidity(), config);
       });
     });
   }
+/*
+// reset validation errors
+  resetValidation() {
+    this._toggleButtonState();
+    this._inputList.forEach((input) => {
+      this._hideError(input)
+    });
+  }
+*/
 // control button state: if button is active remove 'disabled' attribute and the other way around +
-  _setButtonState = (button, buttonIsActive, config) => {
+  _toggleButtonState = (button, buttonIsActive, config) => {
     if (buttonIsActive) {
       button.classList.remove(config.inactiveButtonClass);
       button.disabled = false;
@@ -43,7 +52,6 @@ export default class FormValidator {
     error.textContent = input.validationMessage;
     error.classList.add(config.spanErrorClass);
     input.classList.add(config.inputErrorClass);
-    
   }
 // hide error if form passed validation
   _hideError = (form, input, config) => {
