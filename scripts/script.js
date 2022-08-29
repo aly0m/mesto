@@ -108,7 +108,7 @@ formEditProfile.addEventListener('submit', (evt) => {
   closePopup(popupProfile);
   formEditProfile.reset();
 });
-// submit creation of new card
+// submit creation of a new card
 formNewElement.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const newCard = {};
@@ -128,10 +128,10 @@ buttonEdit.addEventListener('click', () => {
 buttonOpenPopupCard.addEventListener('click', () => {
   openPopup(popupElement);
 });
-// validation for profile edit form
+// validation of profile edit form
 const profileFormValidation = new FormValidator(config, formEditProfile);
 profileFormValidation.enableValidation();
-// validation for creating new card 
+// validation of creating new card 
 const addCardFormValidation = new FormValidator(config, formNewElement);
 addCardFormValidation.enableValidation();
 
