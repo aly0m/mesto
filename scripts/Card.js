@@ -1,11 +1,10 @@
 import { openImagePopup } from './script.js';
 
 export default class Card {
-  constructor(data, templateSelector, handleCardClick) {
+  constructor(data, templateSelector) {
     this._templateSelector = templateSelector;
     this._link = data.link;
     this._name = data.name;
-    this._handleCardClick = handleCardClick;
   }
 // get template from DOM
   _getTemplate() {
@@ -37,13 +36,6 @@ export default class Card {
 // control state of like button
   _likeCardHandler = () => {
     this._likeButton.classList.toggle('element__like-btn_active'); 
-  }
-//
-  _handleCardClick() {
-    imageCard.src = this._link;
-    imageCard.alt = 'Изображение места - ' + this._name;
-    imageCaption.textContent = this._name;
-
   }
 // set necessary event listeners
   _setEventListeners() {
