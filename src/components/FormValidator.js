@@ -51,7 +51,6 @@ export default class FormValidator {
     error.classList.remove(this._config.spanErrorClass);
     input.classList.remove(this._config.inputErrorClass);
   }
-
 // check input
   _hasInvalidInput = () => {
     return this._inputsList.some((input) => {
