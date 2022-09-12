@@ -31,6 +31,7 @@ export default class Card {
 // delete card from DOM
   _deleteCardHandler = () => {
     this._element.remove();
+    this._element = null;
   }
 // control state of like button
   _likeCardHandler = () => {

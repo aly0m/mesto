@@ -35,19 +35,11 @@ export const config = {
   spanErrorClass: 'form__field-error'
 };
 //constants
-//popups
-export const popupProfile = document.querySelector('.popup_open-profile');
-export const popupElement = document.querySelector('.popup_open-element');
-export const popupPlace = document.querySelector('.popup_open-image');
 //forms
 export const profileForm = document.querySelector('#profile');
 export const placeForm = document.querySelector('#place');
 //profile
-export const profileName = document.querySelector('.profile__name');
-export const profileJob = document.querySelector('.profile__job');
 export const inputName = document.querySelector('.popup__field_type_name');
 export const inputJob = document.querySelector('.popup__field_type_job');
 export const buttonEdit = document.querySelector('.profile__btn_type_edit');
 export const buttonOpenPopupCard = document.querySelector('.profile__btn_type_add');
-//
-export const elementsList = document.querySelector('.elements__list');

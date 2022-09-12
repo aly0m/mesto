@@ -8,12 +8,6 @@ import UserInfo from '../components/UserInfo.js';
 import {
   initialCards,
   config,
-  popupProfile,
-  popupElement,
-  popupPlace,
-  elementsList,
-  profileName,
-  profileJob,
   profileForm,
   placeForm,
   buttonEdit,
@@ -26,15 +20,15 @@ import {
 const cardsList = new Section({
   data: initialCards,
   renderer: (item) => {
-    const cardElement = createCard(item).generateCard();
+    const cardElement = createCard(item);
     cardsList.addItem(cardElement);
   },
 },
-  elementsList
+  '.elements__list'
 );
 
 // create object of class PopupWithImage
-const popupImage = new PopupWithImage(popupPlace);
+const popupImage = new PopupWithImage('.popup_open-image');
 
 // create object of class Card
 function createCard(item) {
@@ -44,27 +38,27 @@ function createCard(item) {
       popupImage.open(name, link);
     }
   }, '.place-template');
-  return card;
+  return card.generateCard();
 }
 
 // create object of class PopupWithForm
 const formCard = new PopupWithForm({
-  container: popupElement,
+  popupSelector: '.popup_open-element',
   submitForm: (data) => {
     data['name'] = data['field-place'];
     data['link'] = data['field-link'];
-    const cardElement = createCard(data).generateCard();
+    const cardElement = createCard(data);
     cardsList.addItem(cardElement);
   }
 });
 
 const userInfo = new UserInfo({
-  nameContainer: profileName,
-  jobContainer: profileJob
+  nameSelector: '.profile__name',
+  jobSelector: '.profile__job'
 });
 
 const formProfile = new PopupWithForm({
-  container: popupProfile,
+  popupSelector: '.popup_open-profile',
   submitForm: (data) => {
     userInfo.setUserInfo(data);
   }
@@ -84,11 +78,14 @@ popupImage.setEventListeners();
 formProfile.setEventListeners();
 formCard.setEventListeners();
 buttonEdit.addEventListener('click', () => {
+  formProfile.open();
   const userData = userInfo.getUserInfo();
   inputName.value = userData.name;
   inputJob.value = userData.job;
-  formProfile.open();
+  validatorProfile.resetValidation();
 });
 buttonOpenPopupCard.addEventListener('click', () => {
   formCard.open();
+  validatorPlace.resetValidation();
+  validatorPlace.toggleButtonState();
 });
