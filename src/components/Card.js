@@ -1,10 +1,9 @@
-import { openImagePopup } from './script.js';
-
 export default class Card {
-  constructor(data, templateSelector) {
+  constructor({ data, handleCardClick }, templateSelector) {
     this._templateSelector = templateSelector;
     this._link = data.link;
     this._name = data.name;
+    this._handleCardClick = handleCardClick;
   }
 // get template from DOM
   _getTemplate() {
@@ -42,7 +41,7 @@ export default class Card {
     this._likeButton.addEventListener('click', this._likeCardHandler);
     this._deleteButton.addEventListener('click', this._deleteCardHandler);
     this._elementImage.addEventListener('click', () => {
-      openImagePopup(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
   }
 }

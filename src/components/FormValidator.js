@@ -23,15 +23,6 @@ export default class FormValidator {
       });
     });
   }
-/*
-// reset validation errors
-  resetValidation() {
-    this._toggleButtonState();
-    this._inputList.forEach((input) => {
-      this._hideError(input)
-    });
-  }
-*/
 // control button state: if button is active remove 'disabled' attribute and the other way around +
   _toggleButtonState = (button, buttonIsActive, config) => {
     if (buttonIsActive) {
