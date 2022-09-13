@@ -43,3 +43,5 @@ export const inputName = document.querySelector('.popup__field_type_name');
 export const inputJob = document.querySelector('.popup__field_type_job');
 export const buttonEdit = document.querySelector('.profile__btn_type_edit');
 export const buttonOpenPopupCard = document.querySelector('.profile__btn_type_add');
+//
+export const elementsList = document.querySelector('.elements__list');

@@ -13,7 +13,8 @@ import {
   buttonEdit,
   buttonOpenPopupCard,
   inputName,
-  inputJob
+  inputJob,
+  elementsList
 } from '../utils/constants.js';
 
 //create object of class Section (generate and add initial cards)
@@ -24,7 +25,7 @@ const cardsList = new Section({
     cardsList.addItem(cardElement);
   },
 },
-  '.elements__list'
+  elementsList
 );
 
 // create object of class PopupWithImage
