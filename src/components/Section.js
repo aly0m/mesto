@@ -1,17 +1,20 @@
 export default class Section {
-  constructor({ data, renderer }, container) {
-    this._renderedItems = data;
+  constructor({ renderer }, container) {
     this._renderer = renderer;
     this._container = container;
   }
-// apply callback function to each element
-  renderItems() {
-    this._renderedItems.forEach((item) => {
+
+  renderItems(items) {
+    items.forEach((item) => {
       this._renderer(item);
     });
   }
-// add elements to the page
-  addItem(element) {
+
+  setItem(element) {
+    this._container.append(element);
+  }
+
+  setItemUp(element) {
     this._container.prepend(element);
   }
 }
