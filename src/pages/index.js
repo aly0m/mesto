@@ -39,12 +39,6 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
-/*
-api.getInititalCards()
-  .then((res) => {
-    cardsList.renderItems(res)
-  })
-  .catch(err => console.log(`Error: ${err}`)); */
 
 api.getUserInfo()
   .then((res) => {
