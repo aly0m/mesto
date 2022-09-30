@@ -42,7 +42,7 @@ export default class Card {
       }
     });
 
-    if (this._ownerId != this._userId) {
+    if (this._ownerId !== this._userId) {
       this._deleteButton.remove();
     }
 
